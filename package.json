@@ -23,6 +23,8 @@
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "eject": "react-scripts eject",
     "cy:open": "yarn start --silent & cypress open",
     "cy:run": "BROWSER=none yarn start & cypress run"
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "coveralls": "^3.0.11",
     "cypress": "^4.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
