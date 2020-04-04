@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import { useSelector } from 'react-redux'
+import { articles } from "../modules/articles"
 
 const style = {
   width: "75%",
@@ -8,9 +8,16 @@ const style = {
   borderRadius: "10px",
   left: "12%"
 };
+
 class MapContainer extends Component {
+  state = {
+    articles: [],
+    showingInfoWindow: false,
+    activeMarker: {},
+  }
+
   render() {
-    let articles = this.setState.props.articles
+    let articlesData = this.state.articles
     return (
       <Map
         google={this.props.google}
@@ -21,7 +28,7 @@ class MapContainer extends Component {
           lng: 11.9746
         }}
       >
-        {articles.map(article => {
+        {articlesData.map(article => {
           return (
             <Marker
               title={article.title}
@@ -31,7 +38,6 @@ class MapContainer extends Component {
             />
           );
         })}
-        {/* <Marker onClick={this.onMarkerClick} name={"Current location"} /> */}
 
         <InfoWindow>
           <div></div>
