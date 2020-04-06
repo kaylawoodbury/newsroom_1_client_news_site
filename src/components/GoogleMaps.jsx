@@ -13,7 +13,6 @@ class MapContainer extends Component {
   state = {
     articles: [],
     showingInfoWindow: false,
-    activeMarker: {},
   }
 
   render() {
