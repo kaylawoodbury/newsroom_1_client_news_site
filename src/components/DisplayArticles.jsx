@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Icon, Grid, Header, Image, Button } from 'semantic-ui-react'
+import { Card, Grid, Image, Button } from 'semantic-ui-react'
 import { fetchSingleArticle } from '../state/actions/articleActions'
 import { bindActionCreators } from 'redux'
 import { useTranslation } from 'react-i18next'

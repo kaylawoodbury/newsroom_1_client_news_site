@@ -24,7 +24,7 @@ const DisplayHeader = props => {
         break
       }
     }
-  }, [])
+  }, [props])
 
   const authenticated = useSelector(state => state.authenticated)
   let name

@@ -33,6 +33,7 @@ const Weather = () => {
 
   useEffect(() => {
     loadWeatherData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords])
 
   return (
